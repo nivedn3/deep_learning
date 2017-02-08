@@ -13,4 +13,8 @@ class Network(object):
 			a=sigmoid(np.dot(w,a)+b)
 		return a
 
-	def sgd(self,)
+	def sig(z):
+		return 1.0/(1.0+np.exp(-z))
+
+	def dersig(z):
+		return sig(z)*(1-sig(z))
