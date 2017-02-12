@@ -99,4 +99,4 @@ if __name__=='__main__':
 	import mnist_loader
 	training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 	net=Network([784,30,10])
-	net.gradient_descend(training_data,test_data,30,10,3.00000000000)
+	net.gradient_descend(training_data,test_data,30,25,3.00000000000)
