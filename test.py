@@ -75,10 +75,11 @@ class Network(object):
 		#print z[-2].shape
 		del_a.append(np.dot(deltaL,np.transpose(sig(z[0]))))
 
-		#for l in range(self.num_layers-2):
-		zeta=(sig_prime(z[0])*np.dot(np.transpose(self.weights[1]),deltaL))
-		delta.append(zeta)
-		del_a.append(np.dot(delta[1],np.transpose(i)))
+		for l in range(self.num_layers-2):
+		
+			zeta=(sig_prime(z[-l-2])*np.dot(np.transpose(self.weights[-l-1]),delta[-1]))
+			delta.append(zeta)
+			del_a.append(np.dot(delta[-1],np.transpose(i)))
 		del_b=delta[::-1]
 		del_a=del_a[::-1]
 		#print del_a
