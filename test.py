@@ -67,8 +67,6 @@ class Network(object):
 			z.append(np.dot(w,a)+b)
 			a=sig(z[count])
 			count=count+1
-		
-
 		deltaL=((sig(z[1])-j)*sig_prime(z[1]))
 		delta.append(deltaL)
 		#print deltaL.shape
@@ -76,7 +74,6 @@ class Network(object):
 		del_a.append(np.dot(deltaL,np.transpose(sig(z[0]))))
 
 		for l in range(self.num_layers-2):
-		
 			zeta=(sig_prime(z[-l-2])*np.dot(np.transpose(self.weights[-l-1]),delta[-1]))
 			delta.append(zeta)
 			del_a.append(np.dot(delta[-1],np.transpose(i)))
@@ -101,3 +98,4 @@ if __name__=='__main__':
 	training_data, validation_data, test_data = mnist_loader.load_data_wrapper()
 	net=Network([784,30,10])
 	net.gradient_descend(training_data,test_data,30,25,3.00000000000)
+
