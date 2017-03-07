@@ -28,8 +28,18 @@ class Network(object):
 			a=sigmoid(z)
 		return a 
 
-	def sgd():
+	def sgd(self,mbsize,training_data):
+		mini_batch=[training_data[k:k+mbsize]  for k in range(0,len(training_data),mbsize)]
+		self.update_minibatch(mini_batch)
+
+	def update_minibatch(self):
+
+
+	def backprop(self):
 		
+
+
+
 def sigmoid(a)
 	return 1/(1+np.exp(-a))
 
