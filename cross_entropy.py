@@ -1,3 +1,6 @@
+# Using the cross entropy transfer function instead of the sigmoid function used in the last case.
+
+
 import numpy as np 
 import random
 import json
@@ -45,4 +48,6 @@ def sigmoid(a)
 
 def sigmoid_prime(a):
 	return  sigmoid(a)*(1-sigmoid(a))
+
+
 
